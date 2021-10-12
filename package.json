@@ -25,8 +25,8 @@
     "Oleksandr_Halichenko@epam.com",
     "John_Doe@epam.com"
   ],
-  "students": [
-    "Yahor Labanau"
+  "contributors": [
+    "Yahor Labanau <yahor_labanau@epam.com>"
   ],
   "license": "ISC",
   "dependencies": {
