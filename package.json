@@ -1,0 +1,35 @@
+{
+  "name": "js-mentoring-program",
+  "version": "1.6.0",
+  "description": "Repository for learning tasks",
+  "scripts": {
+    "test:intro": "mocha tasks/introduction/*.spec.js",
+    "test:variables": "mocha tasks/variables/test/*.spec.js",
+    "test:cycles": "mocha tasks/cycles/test/*.spec.js",
+    "test:condition": "mocha tasks/condition/test/*.spec.js",
+    "test:functions": "mocha tasks/functions/test/*.spec.js",
+    "test:arrays": "mocha tasks/arrays/test/*.spec.js",
+    "test:strings": "mocha tasks/strings/test/*.spec.js",
+    "test:objects": "mocha tasks/objects/test/objects.spec.js",
+    "test:classes": "mocha tasks/classes/test/classes.spec.js",
+    "test:po": "mocha tasks/classes/test/po.spec.js",
+    "test:async": "mocha tasks/async/*.spec.js",
+    "test:nodejs": "mocha tasks/nodeJs/test/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.epam.com/Dzmitry_Shaplyka/js-mentoring-program.git"
+  },
+  "authors": [
+    "Dzmitry_Shaplyka@epam.com",
+    "Oleksandr_Halichenko@epam.com",
+    "John_Doe@epam.com"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.0.1",
+    "node-fetch": "^2.6.0",
+    "sinon": "latest"
+  }
+}
