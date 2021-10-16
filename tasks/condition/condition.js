@@ -12,8 +12,13 @@ const x = 3;
 const y = 7;
 
 //TODO put your code here
+if (y < 10) {
+    z1 = x + y;
+} else if (y >= 10) {
+    z1 = x * y;
+}
 
-
+(y < 10) ? z2 = (x + y): z2 = (x * y);
 
 /** TODO
  * The system receives 3 params - alpha, beta, operator.
@@ -27,7 +32,15 @@ const beta = 7;
 const operator = "add";
 
 //TODO put your code here
-
+if (operator === "add") {
+    task2 = alpha + beta;
+} else if (operator === "subtract") {
+    task2 = alpha - beta;
+} else if (operator === "multiply") {
+    task = alpha * beta;
+} else if (operator === "divide") {
+    task = alpha / beta;
+}
 
 
 /**
@@ -45,7 +58,15 @@ const redemption = 420;
 let discount;
 
 //TODO put your code here
-
+if (redemption >= 0 && redemption <= 350) {
+    discount = 0;
+} else if (redemption >= 351 && redemption <= 1350) {
+    discount = 15;
+} else if (redemption >= 1351 && redemption <= 2700) {
+    discount = 30;
+} else if (redemption >= 2701 && redemption <= 6500) {
+    discount = 45;
+}
 
 module.exports = {
     z1,
