@@ -18,7 +18,7 @@ if (y < 10) {
     z1 = x * y;
 }
 
-(y < 10) ? z2 = (x + y): z2 = (x * y);
+(y < 10) ? z2 = (x + y) : z2 = (x * y);
 
 /** TODO
  * The system receives 3 params - alpha, beta, operator.
