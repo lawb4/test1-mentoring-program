@@ -3,7 +3,7 @@
  *
  */
 function sum(a, b) {
-	
+	return (a + b);
 }
 
 /**
@@ -15,7 +15,7 @@ function sum(a, b) {
  * }
  */
 function getFullName(object) {
-
+	return `${object.firstName} ${object.lastName}`;
 }
 
 /**
@@ -23,7 +23,7 @@ function getFullName(object) {
  * true if odd, false if even
  */
 function isOdd(n) {
-
+	return n % 2 !== 0;
 }
 
 /**
@@ -31,15 +31,24 @@ function isOdd(n) {
  * e.g ["one", "two", "three"] should return one
  */
 function getShortest(wordArray) {
+	let shortestWord = wordArray[0];
 
+	for (let word of wordArray) {
+		if (shortestWord.length > word.length) {
+			shortestWord = word;
+		}
+	}
+	return shortestWord;
 }
+console.log(getShortest(['one', 'tw', 'three']));
 
 /**
  * write function that returns word google with given numbers of "o" symbols
  * e.g getGoogle(5) should return "gooooogle"
  */
 function getGoogle(n) {
-
+	let o = 'o';
+	return `g${o.repeat(n)}gle`;
 }
 
 /**
@@ -52,9 +61,15 @@ function getGoogle(n) {
  *    age: 42
  * }
  */
-function getUser(firstName, lastName, age) {
-
+function getUser(firstName = null, lastName = null, age = null) {
+	const user = {
+		firstName: firstName,
+		lastName: lastName,
+		age: age
+	};
+	return user;
 }
+console.log(getUser(32, 2, 4));
 
 /**
  * write function that calculates total path traveled.
@@ -62,9 +77,24 @@ function getUser(firstName, lastName, age) {
  * e.g [{direction: "Kiyv - Minsk", distance: 567}, {direction: "Kiyv - Paris", distance: 2402}]
  */
 
-function getTotalPath(path) {
+// const path = [{
+// 	direction: "Kyiv - Minsk",
+// 	distance: 20
+// }, {
+// 	direction: "Kiyv - Paris",
+// 	distance: 30
+// }];
 
+function getTotalPath(path) {
+	let totalPath = 0;
+
+	for (const obj of path) {
+		let distance = obj.distance;
+		totalPath += distance;
+	}
+	return totalPath;
 }
+// console.log(getTotalPath(path));
 
 /**
  * write a function that will calculate a discount considering the Amount
@@ -77,8 +107,11 @@ function getTotalPath(path) {
  */
 
 function discountFunction(percentage) {
+	const percentageToNumber = percentage / 100;
 
 	return function (amount) {
+		const afterDiscountPrice = amount - (amount * percentageToNumber);
+		return afterDiscountPrice;
 	};
 }
 
@@ -95,12 +128,15 @@ const myObject = {
 	age: 25,
 	friends: ['Mike', 'Alan', 'Daniel'],
 	keys() {
-		//write your code here
+		for (const key in myObject) {
+			console.log(key);
+		}
 	},
 	call() {
-		//write your code here
+		return `My name is ${this.name} ${this.lastName} 
+				and I am ${this.age} years old. 
+				My best friend is ${this.friends[2]}`;
 	}
-
 };
 
 module.exports = {
