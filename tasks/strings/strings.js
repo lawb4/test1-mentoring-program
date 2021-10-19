@@ -7,21 +7,33 @@
  * console.log(reverseString('hello)) // 'olleh'
  * console.log(reverseString(123)) // 'This is not a string!'
  */
-function reverseString(str) {
-  
+ function reverseString(str) {
+
+  if (typeof (str) == "number") {
+    return 'This is not a string!';
+  }
+
+  let reversedStr = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversedStr += str.charAt(i);
+  }
+  return reversedStr;
 }
 
 /**
  * Calculate a century by given year if a number is passed
-* @param {number} year
-* @return {num} century
-* @example
-* console.log(centuryFromYear(1705)) // 18
-* console.log(centuryFromYear(1900)) // 19
-* console.log(centuryFromYear(1601)) // 17
-*/
+ * @param {number} year
+ * @return {num} century
+ * @example
+ * console.log(centuryFromYear(1705)) // 18
+ * console.log(centuryFromYear(1900)) // 19
+ * console.log(centuryFromYear(1601)) // 17
+ */
 function centuryFromYear(year) {
-  
+  if (typeof year === 'number') {
+    let century = Math.ceil(year / 100);
+    return century;
+  }
 }
 
 /**
@@ -34,8 +46,14 @@ function centuryFromYear(year) {
  * console.log(strCount('Hello', 'l')) // 2
  * console.log(strCount('', 'z')) // 0
  */
-function strCount(str, char) {
-
+function strCount(str, char) {
+  let counter = 0;
+  for (let i = 0; i <= str.length; i++) {
+    if (str[i] === char) {
+      counter++;
+    }
+  }
+  return counter;
 }
 
 /**
@@ -49,8 +67,20 @@ function strCount(str, char) {
  * console.log(truncateString('This is a long string', 6)) // 'This i...'
  * console.log(truncateString('This', 6)) // 'This'
  */
-function truncateString(str, num) {
+function truncateString(str, num) {
+  let truncatedStr = '';
 
+  for (let i = 0; i <= str.length; i++) {
+    if (str.length <= num) {
+      return str;
+    }
+    if (i >= num) {
+      break;
+    }
+    truncatedStr += str.charAt(i);
+  }
+  truncatedStr += '...';
+  return truncatedStr;
 }
 
 /**
@@ -61,7 +91,9 @@ function truncateString(str, num) {
  * console.log(replace10("231054")) // 23ten54
  */
 function replace10(text) {
-
+  let pattern = /10/g;
+  let newText = text.replace(pattern, 'ten');
+  return newText;
 }
 
 /**
@@ -72,7 +104,10 @@ function replace10(text) {
  * console.log(replaceConfidential("lorem [ipsum] si dolor")) // lorem [CONFIDENTIAL] si dolor
  */
 function replaceConfidential(text) {
+  let regex = /\[.*?\]/g;
+  let replacedStr = text.replace(regex, '[CONFIDENTIAL]');
 
+  return replacedStr;
 }
 
 module.exports = {
