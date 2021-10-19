@@ -31,8 +31,7 @@ function reverseString(str) {
  */
 function centuryFromYear(year) {
   if (typeof year === 'number') {
-    let century = Math.ceil(year / 100);
-    return century;
+    return Math.ceil(year / 100);
   }
 }
 
@@ -89,8 +88,7 @@ function truncateString(str, num) {
  */
 function replace10(text) {
   let regex = /10/g;
-  let newText = text.replace(regex, 'ten');
-  return newText;
+  return text.replace(regex, 'ten');
 }
 
 /**
@@ -102,9 +100,7 @@ function replace10(text) {
  */
 function replaceConfidential(text) {
   let regex = /\[.*?\]/g;
-  let replacedStr = text.replace(regex, '[CONFIDENTIAL]');
-
-  return replacedStr;
+  return text.replace(regex, '[CONFIDENTIAL]');
 }
 
 module.exports = {
