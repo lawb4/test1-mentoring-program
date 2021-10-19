@@ -9,7 +9,7 @@
  */
 function reverseString(str) {
 
-  if ((typeof (str) !== 'string')) {
+  if (typeof (str) !== 'string') {
     return 'This is not a string!';
   }
 
