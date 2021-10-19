@@ -7,9 +7,9 @@
  * console.log(reverseString('hello)) // 'olleh'
  * console.log(reverseString(123)) // 'This is not a string!'
  */
- function reverseString(str) {
+function reverseString(str) {
 
-  if (typeof (str) == "number") {
+  if ((typeof (str) !== 'string')) {
     return 'This is not a string!';
   }
 
@@ -71,16 +71,13 @@ function truncateString(str, num) {
   let truncatedStr = '';
 
   for (let i = 0; i <= str.length; i++) {
-    if (str.length <= num) {
-      return str;
-    }
     if (i >= num) {
       break;
     }
     truncatedStr += str.charAt(i);
   }
   truncatedStr += '...';
-  return truncatedStr;
+  return str.length <= num ? str : truncatedStr;
 }
 
 /**
@@ -91,8 +88,8 @@ function truncateString(str, num) {
  * console.log(replace10("231054")) // 23ten54
  */
 function replace10(text) {
-  let pattern = /10/g;
-  let newText = text.replace(pattern, 'ten');
+  let regex = /10/g;
+  let newText = text.replace(regex, 'ten');
   return newText;
 }
 
