@@ -4,8 +4,7 @@
  * @return {Array} - char names
  */
 function getCharactersNames(chars) {
-	const arrayOfNames = chars.map(char => char.name);
-	return arrayOfNames;
+	return chars.map(char => char.name);
 }
 
 /**
@@ -22,8 +21,7 @@ function printCharacterNames(chars) {
  * @return {Array} - non human characters
  */
 function getNonHumanCharacters(chars) {
-	const arrOfNonHumanChars = chars.filter(char => char.species !== 'Human');
-    return arrOfNonHumanChars;
+    return chars.filter(char => char.species !== 'Human');
 }
 
 /**
@@ -32,8 +30,7 @@ function getNonHumanCharacters(chars) {
  * @return {Object} - Jerry object
  */
 function getJerryInfo(chars) {
-	const charJerrySmith = chars.find(char => char.name === 'Jerry Smith');
-    return charJerrySmith;
+    return chars.find(char => char.name === 'Jerry Smith');
 }
 
 /**
@@ -42,8 +39,7 @@ function getJerryInfo(chars) {
  * @return {boolean}
  */
 function isAllHuman(chars) {
-	const isHuman = chars.every(char => char.species === 'Human');
-    return isHuman;
+    return chars.every(char => char.species === 'Human');
 }
 
 /**
@@ -52,8 +48,7 @@ function isAllHuman(chars) {
  * @return {boolean}
  */
 function isAnyFishPerson(chars) {
-	const isFishPerson = chars.some(char => char.type === 'Fish-Person');
-    return isFishPerson;
+    return chars.some(char => char.type === 'Fish-Person');
 }
 
 /**
