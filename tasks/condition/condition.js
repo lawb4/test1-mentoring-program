@@ -32,14 +32,19 @@ const beta = 7;
 const operator = "add";
 
 //TODO put your code here
-if (operator === "add") {
-    task2 = alpha + beta;
-} else if (operator === "subtract") {
-    task2 = alpha - beta;
-} else if (operator === "multiply") {
-    task = alpha * beta;
-} else if (operator === "divide") {
-    task = alpha / beta;
+switch (operator) {
+    case 'add':
+        task2 = alpha + beta;
+        break;
+    case 'subtract':
+        task2 = alpha - beta;
+        break;
+    case 'multiply':
+        task2 = alpha * beta;
+        break;
+    case 'divide':
+        task2 = alpha / beta;
+        break;
 }
 
 
