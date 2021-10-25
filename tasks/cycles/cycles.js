@@ -58,7 +58,6 @@ const personIncomes = {
 for (const el in personIncomes) {
   totalIncome += personIncomes[el];
 }
-console.log(totalIncome);
 
 
 module.exports = {
