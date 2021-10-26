@@ -58,12 +58,12 @@ class LoginPage extends BasePage {
 }
 
 class Component {
-    constructor(type) {
-        this.type = type;
+    constructor(name) {
+        this.name = name;
     }
 
     review() {
-        return `${this.type} -> reviewed`;
+        return `footer (${this.name}) -> reviewed`;
     }
 }
 
