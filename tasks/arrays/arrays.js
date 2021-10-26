@@ -12,7 +12,7 @@ function getCharactersNames(chars) {
  * @param {Array} chars
  */
 function printCharacterNames(chars) {
-	const charsNames = chars.map(char => console.log(char.name));
+    chars.map(char => console.log(char.name));
 }
 
 /**
