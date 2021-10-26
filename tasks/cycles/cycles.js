@@ -9,23 +9,24 @@ let forFactorial, whileFactorial, doFactorial;
 const n = 10; //10! = 3628800
 
 forFactorial = whileFactorial = doFactorial = 1;
-let i = n;
 
-for (i = n; i > 0; i--) {
+for (let i = 1; i <= n; i++) {
   forFactorial *= i;
 }
 
-i = n;
-while (i > 0) {
-  whileFactorial *= i;
-  i--;
+{
+  let i = 1;
+  while (i <= n) {
+    whileFactorial *= i++;
+  }
 }
 
-i = n;
-do {
-  doFactorial *= i;
-  i--;
-} while (i > 0);
+{
+  let i = 1;
+  do {
+    doFactorial *= i++;
+  } while (i <= n);
+}
 
 /** TODO
  * return concatenated string from an array of substring
