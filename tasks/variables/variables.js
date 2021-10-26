@@ -18,7 +18,7 @@ let str2 = str + " Dou";
 /**
  * TODO create variable named bool and set value equal to comparison of int and int2 variables
  */
-let bool = int == int2;
+let bool = int === int2;
 /**
  * TODO create variable named arr and set value array of numbers from 1 to 5
  */
@@ -32,7 +32,7 @@ let fifth = arr[4];
  */
 let human = {
   firstName: "John"
-}
+};
 /**
  * TODO set new key of human object named lastName and value "Dou"
  */
