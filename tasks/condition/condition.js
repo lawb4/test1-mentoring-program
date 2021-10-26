@@ -14,11 +14,11 @@ const y = 7;
 //TODO put your code here
 if (y < 10) {
     z1 = x + y;
-} else if (y >= 10) {
+} else {
     z1 = x * y;
 }
 
-(y < 10) ? z2 = (x + y) : z2 = (x * y);
+z2 = (y < 10) ? (x + y) : (x * y);
 
 /** TODO
  * The system receives 3 params - alpha, beta, operator.
@@ -63,13 +63,13 @@ const redemption = 420;
 let discount;
 
 //TODO put your code here
-if (redemption >= 0 && redemption <= 350) {
+if (redemption <= 350) {
     discount = 0;
-} else if (redemption >= 351 && redemption <= 1350) {
+} else if (redemption <= 1350) {
     discount = 15;
-} else if (redemption >= 1351 && redemption <= 2700) {
+} else if (redemption <= 2700) {
     discount = 30;
-} else if (redemption >= 2701 && redemption <= 6500) {
+} else if (redemption <= 6500) {
     discount = 45;
 }
 
