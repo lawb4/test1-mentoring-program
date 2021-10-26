@@ -62,12 +62,11 @@ function getGoogle(n) {
  * }
  */
 function getUser(firstName = null, lastName = null, age = null) {
-	const user = {
+	return {
 		firstName: firstName,
 		lastName: lastName,
 		age: age
 	};
-	return user;
 }
 console.log(getUser(32, 2, 4));
 
@@ -76,14 +75,6 @@ console.log(getUser(32, 2, 4));
  * path represended as array of objects with field distance and direction
  * e.g [{direction: "Kiyv - Minsk", distance: 567}, {direction: "Kiyv - Paris", distance: 2402}]
  */
-
-// const path = [{
-// 	direction: "Kyiv - Minsk",
-// 	distance: 20
-// }, {
-// 	direction: "Kiyv - Paris",
-// 	distance: 30
-// }];
 
 function getTotalPath(path) {
 	let totalPath = 0;
@@ -110,8 +101,7 @@ function discountFunction(percentage) {
 	const percentageToNumber = percentage / 100;
 
 	return function (amount) {
-		const afterDiscountPrice = amount - (amount * percentageToNumber);
-		return afterDiscountPrice;
+		return amount - (amount * percentageToNumber);
 	};
 }
 
@@ -133,9 +123,7 @@ const myObject = {
 		}
 	},
 	call() {
-		return `My name is ${this.name} ${this.lastName} 
-				and I am ${this.age} years old. 
-				My best friend is ${this.friends[2]}`;
+		return `My name is ${this.name} ${this.lastName} and I am ${this.age} years old. My best friend is ${this.friends[2]}`;
 	}
 };
 
