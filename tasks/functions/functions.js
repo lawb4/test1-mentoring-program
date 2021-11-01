@@ -46,7 +46,8 @@ function getShortest(wordArray) {
  * e.g getGoogle(5) should return "gooooogle"
  */
 function getGoogle(n) {
-    return `g${'o'.repeat(n)}gle`;
+    const REPEATED_LETTER = 'o';
+    return `g${REPEATED_LETTER.repeat(n)}gle`;
 }
 
 /**
@@ -59,7 +60,7 @@ function getGoogle(n) {
  *    age: 42
  * }
  */
-function getUser(firstName = null, lastName = null, age = null) {
+function getUser(firstName = 'Yahor', lastName = null, age = null) {
     return {
         firstName,
         lastName,
@@ -76,8 +77,8 @@ function getUser(firstName = null, lastName = null, age = null) {
 function getTotalPath(path) {
     let totalPath = 0;
 
-    for (const obj of path) {
-        totalPath += obj.distance;
+    for (const route of path) {
+        totalPath += route.distance;
     }
     return totalPath;
 }
