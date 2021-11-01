@@ -1,9 +1,9 @@
 const {
-	getDogs,
-	getCats,
-	getBirds,
-	firstPromise,
-	secondPromise
+    getDogs,
+    getCats,
+    getBirds,
+    firstPromise,
+    secondPromise
 } = require("./utils/utilPromises");
 
 /**
@@ -14,7 +14,10 @@ const {
  */
 
 function promiseResolve() {
-	//PLACE YOUR CODE HERE:
+    // return new Promise((resolve) => {
+    //     resolve('Resolved!');
+    // });
+    return new Promise(resolve => resolve('Resolved!'));
 }
 
 /**
@@ -25,7 +28,7 @@ function promiseResolve() {
  */
 
 function promiseReject() {
-	//PLACE YOUR CODE HERE:
+    return new Promise(reject => reject('Rejected!'));
 }
 
 /**
@@ -35,21 +38,32 @@ function promiseReject() {
  */
 
 function fullPromise(param) {
-	//PLACE YOUR CODE HERE:
+    return new Promise((resolve, reject) => {
+        param ? resolve('Resolved!') : reject('Rejected!');
+    });
 }
 
 /**
  * Task-4: Chain two promises (firstPromise() and secondPromise()
- * from the './utils/utilPromises' file) 
+ * from the './utils/utilPromises' file)
  * and store the result to the
  * variable 'chainingResult' = 'Promises chained';
  * Please do the chaining inside of the promisesChaining function
  */
-let chainingResult = '';
+let chainingResult = promisesChaining();
 
 async function promisesChaining() {
-	//PLACE YOUR CODE HERE:
+
 }
+
+//     return secondPromise()
+//         .then((fulfilled2) => {
+//
+//         });
+// });
+// }).then((fulfilled2) => {
+//     return `${fulfilled1} ${fulfilled2}`;
+// });
 
 
 /**
@@ -61,13 +75,13 @@ async function promisesChaining() {
  */
 
 async function getAnimals() {
-	//PLACE YOUR CODE HERE:
+    return Promise.all([getDogs(), getCats(), getBirds()]);
 }
 
 module.exports = {
-	promiseResolve,
-	promiseReject,
-	fullPromise,
-	getAnimals,
-	promisesChaining
+    promiseResolve,
+    promiseReject,
+    fullPromise,
+    getAnimals,
+    promisesChaining
 };
