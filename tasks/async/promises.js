@@ -53,17 +53,14 @@ function fullPromise(param) {
 let chainingResult = promisesChaining();
 
 async function promisesChaining() {
-
+    return firstPromise()
+        .then(firstResult => {
+            return secondPromise()
+        .then(secondResult => {
+            return `${firstResult} ${secondResult}`;
+        });
+    });
 }
-
-//     return secondPromise()
-//         .then((fulfilled2) => {
-//
-//         });
-// });
-// }).then((fulfilled2) => {
-//     return `${fulfilled1} ${fulfilled2}`;
-// });
 
 
 /**
