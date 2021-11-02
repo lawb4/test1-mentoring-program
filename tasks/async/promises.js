@@ -14,9 +14,6 @@ const {
  */
 
 function promiseResolve() {
-    // return new Promise((resolve) => {
-    //     resolve('Resolved!');
-    // });
     return new Promise(resolve => resolve('Resolved!'));
 }
 
