@@ -3,7 +3,7 @@
  *
  */
 function sum(a, b) {
-	
+    return a + b;
 }
 
 /**
@@ -15,7 +15,7 @@ function sum(a, b) {
  * }
  */
 function getFullName(object) {
-
+    return `${object.firstName} ${object.lastName}`;
 }
 
 /**
@@ -23,7 +23,7 @@ function getFullName(object) {
  * true if odd, false if even
  */
 function isOdd(n) {
-
+    return (n % 2 !== 0);
 }
 
 /**
@@ -31,7 +31,14 @@ function isOdd(n) {
  * e.g ["one", "two", "three"] should return one
  */
 function getShortest(wordArray) {
+    let shortestWord = wordArray[0];
 
+    for (let word of wordArray) {
+        if (shortestWord.length > word.length) {
+            shortestWord = word;
+        }
+    }
+    return shortestWord;
 }
 
 /**
@@ -39,11 +46,12 @@ function getShortest(wordArray) {
  * e.g getGoogle(5) should return "gooooogle"
  */
 function getGoogle(n) {
-
+    const REPEATED_LETTER = 'o';
+    return `g${REPEATED_LETTER.repeat(n)}gle`;
 }
 
 /**
- * write function that returns object based on the given information 
+ * write function that returns object based on the given information
  * (params may be null, so, please use default params)
  * getUser("John", "Dou", 42) should return
  * {
@@ -52,8 +60,12 @@ function getGoogle(n) {
  *    age: 42
  * }
  */
-function getUser(firstName, lastName, age) {
-
+function getUser(firstName = 'Yahor', lastName = null, age = null) {
+    return {
+        firstName,
+        lastName,
+        age
+    };
 }
 
 /**
@@ -63,7 +75,12 @@ function getUser(firstName, lastName, age) {
  */
 
 function getTotalPath(path) {
+    let totalPath = 0;
 
+    for (const route of path) {
+        totalPath += route.distance;
+    }
+    return totalPath;
 }
 
 /**
@@ -77,9 +94,11 @@ function getTotalPath(path) {
  */
 
 function discountFunction(percentage) {
+    const percentageToNumber = percentage / 100;
 
-	return function (amount) {
-	};
+    return function (amount) {
+        return amount - (amount * percentageToNumber);
+    };
 }
 
 /**
@@ -90,27 +109,28 @@ function discountFunction(percentage) {
  */
 
 const myObject = {
-	name: 'John',
-	lastName: 'Doe',
-	age: 25,
-	friends: ['Mike', 'Alan', 'Daniel'],
-	keys() {
-		//write your code here
-	},
-	call() {
-		//write your code here
-	}
-
+    name: 'John',
+    lastName: 'Doe',
+    age: 25,
+    friends: ['Mike', 'Alan', 'Daniel'],
+    keys() {
+        for (const key in myObject) {
+            console.log(key);
+        }
+    },
+    call() {
+        return `My name is ${this.name} ${this.lastName} and I am ${this.age} years old. My best friend is ${this.friends[2]}`;
+    }
 };
 
 module.exports = {
-	sum,
-	getFullName,
-	isOdd,
-	getShortest,
-	getGoogle,
-	getUser,
-	getTotalPath,
-	discountFunction,
-	myObject
+    sum,
+    getFullName,
+    isOdd,
+    getShortest,
+    getGoogle,
+    getUser,
+    getTotalPath,
+    discountFunction,
+    myObject
 };
