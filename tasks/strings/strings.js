@@ -8,16 +8,17 @@
  * console.log(reverseString(123)) // 'This is not a string!'
  */
 function reverseString(str) {
-
   if (typeof (str) !== 'string') {
     return 'This is not a string!';
   }
 
-  let reversedStr = '';
-  for (let i = str.length - 1; i >= 0; i--) {
-    reversedStr += str.charAt(i);
-  }
-  return reversedStr;
+  // let reversedStr = '';
+  // for (let i = str.length - 1; i >= 0; i--) {
+  //   reversedStr += str.charAt(i);
+  // }
+  // return reversedStr;
+
+  return str.split('').reverse().join('');
 }
 
 /**
@@ -46,13 +47,18 @@ function centuryFromYear(year) {
  * console.log(strCount('', 'z')) // 0
  */
 function strCount(str, char) {
-  let counter = 0;
-  for (let i = 0; i <= str.length; i++) {
-    if (str[i] === char) {
-      counter++;
-    }
+  // let counter = 0;
+  // for (let i = 0; i <= str.length; i++) {
+  //   if (str[i] === char) {
+  //     counter++;
+  //   }
+  // }
+  // return counter;
+
+  if (!(str.includes(char))){
+    return 0;
   }
-  return counter;
+  return str.match(new RegExp(char,"g")).length;
 }
 
 /**
@@ -67,16 +73,16 @@ function strCount(str, char) {
  * console.log(truncateString('This', 6)) // 'This'
  */
 function truncateString(str, num) {
-  let truncatedStr = '';
+  let truncatedString = '';
 
   for (let i = 0; i <= str.length; i++) {
     if (i >= num) {
       break;
     }
-    truncatedStr += str.charAt(i);
+    truncatedString += str.charAt(i);
   }
-  truncatedStr += '...';
-  return str.length <= num ? str : truncatedStr;
+  truncatedString += '...';
+  return (str.length <= num) ? str : truncatedString;
 }
 
 /**

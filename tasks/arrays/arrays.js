@@ -59,15 +59,15 @@ function isAnyFishPerson(chars) {
  * console.log(minItem([2,5,6,3,1,8])) // 4
  */
 function minItem(arr) {
-	let arrMinIndex = arr.indexOf(arr[0]);
+	let minIndex = arr.indexOf(arr[0]);
     let minValue = arr[0];
 
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] < minValue) {
-            arrMinIndex = arr.indexOf(arr[i]);
+            minIndex = arr.indexOf(arr[i]);
         }
     }
-    return arrMinIndex;
+    return minIndex;
 }
 
 module.exports = {
